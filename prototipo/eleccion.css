@@ -4,15 +4,12 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: relative;
+    background-color: rgb(253, 216, 39);
 }
 
 .imagen-prototipo {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: fill; /* Fuerza a la imagen a ocupar el marco exacto del iframe escalado */
+    object-fit: fill; /* Hace que se adapte milimétricamente al marco */
     display: block;
 }
