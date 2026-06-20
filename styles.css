@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap');
+ 
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+html, body {
+    width: 100%;
+    background-color: rgb(242, 213, 74);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+/* BARRA DE NAVEGACIÓN */
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: 1000;
+}
+.barra-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 30px;
+    width: 100%;
+}
+.imagen-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.lista-nav {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+.lista-nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #555555;
+    border-radius: 18px;
+    width: 140px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+}
+/* Truco para ocultar hamburguesa en escritorio */
+.checkbox-menu {
+    display: none;
+}
+.boton-menu {
+    display: none;
+    cursor: pointer;
+}
+.boton-menu img {
+    width: 35px;
+    height: 35px;
+}
+/* Contenido hasta antes de pie de página */
+.contenido-principal {
+    padding-top: 70px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Seccion inicio*/
+.seccion-hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+    background-color: rgb(242, 213, 74);
+}
+.imagen-principal {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: fill;
+    display: block;
+}
+/* Cuadro para logo plomo y texto */
+.caja-flotante {
+    position: absolute;
+    left: 5%;
+    bottom: 26%;
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    z-index: 10;
+}
+.logo-gris {
+    width: 70%;
+    max-width: 380px;
+    min-width: 150px;
+    height: auto;
+    display: block;
+}
+.cuadro-texto {
+    width: 100%;
+    background-color: rgb(241, 189, 57);
+    padding: 18px 22px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cuadro-texto p {
+    font-size: 16px;
+    color: #111111;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+}
+/* Prototipo */
+.seccion-prototipo {
+    width: 100%;
+    background-color: rgb(242, 213, 74);
+    padding: 60px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo-prototipo {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.contenedor-prototipo {
+    width: calc(75vh * (673 / 1440));
+    height: 75vh;
+    max-width: 90vw;
+    background-color: #ffffff;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.contenedor-prototipo iframe,
+.contenedor-prototipo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+/*PIE DE PÁGINA*/
+.pie-pagina {
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 45px 40px 50px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    margin-top: 60px;
+    box-sizing: border-box;
+}
+.titulo-grupo {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 35px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.grilla-integrantes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: nowrap;
+}
+.tarjeta-integrante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 120px;
+    max-width: 170px;
+}
+.nombre-integrante {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+} 
+.enlace-instagram {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+}
+.icono-instagram {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
+}
+.enlace-instagram:hover .icono-instagram {
+    transform: scale(1.15);
+} 
+/* Responsive simple para 992px */
+@media (max-width: 992px) {
+    .grilla-integrantes {
+        flex-wrap: wrap;
+        gap: 30px 20px;
+    }
+    .tarjeta-integrante {
+        flex: calc(33.33% - 20px);
+    }
+}
+@media (max-width: 1050px) and (min-width: 769px) {
+    .caja-flotante {
+        bottom: 5%;
+        gap: 1.5vh;
+    }
+    .logo-gris {
+        max-width: 200px;
+    }
+}
+/* Responsive para movil */
+@media (max-width: 768px) {
+ 
+    /* Menú hamburguesa a partir de 768px */
+    .boton-menu {
+        display: block;
+        z-index: 1001;
+    }
+    .boton-menu .icono-cerrar {
+        display: none;
+    }
+    .lista-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        width: 250px;
+        background-color: rgba(128, 128, 128, 0.45);
+        padding: 25px 20px;
+        border-radius: 10px;
+        gap: 15px;
+    }
+    .lista-nav li a {
+        background-color: #000000;
+        width: 180px;
+        padding: 12px 0;
+        font-size: 16px;
+        display: block;
+    }
+    /* hamburguesa interaccion*/
+    .checkbox-menu:checked ~ .lista-nav {
+        display: flex;
+    }
+    .checkbox-menu:checked ~ .boton-menu .icono-abrir {
+        display: none;
+    }
+    .checkbox-menu:checked ~ .boton-menu .icono-cerrar {
+        display: block;
+    }
+    /* Contenido principal */
+    .contenido-principal {
+        padding-top: 60px;
+    }
+    /* Sección principal(logo y texto) */
+    .seccion-hero {
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+    }
+    .imagen-principal {
+        height: auto;
+        max-height: 45vh;
+        object-fit: cover;
+        width: 100%;
+    }
+    .caja-flotante {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(242, 213, 74);
+        padding: 50px 20px 60px 20px;
+        gap: 25px;
+        align-items: center;
+    }
+    .logo-gris {
+        position: absolute;
+        top: -18vw;
+        left: 28%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        max-width: 195px;
+        min-width: 95px;
+        z-index: 15;
+    }
+    .cuadro-texto {
+        width: 92%;
+        max-width: 500px;
+        padding: 35px 28px;
+        border-radius: 18px;
+    }
+    .cuadro-texto p {
+        font-size: 14.5px;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1.6;
+    }
+    /* Sección prototipo */
+    .seccion-prototipo {
+        padding: 40px 0 0 0;
+    }
+    .titulo-prototipo {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    .contenedor-prototipo {
+        max-width: 85vw;
+        width: calc(70vh * (673 / 1440));
+        height: 70vh;
+        border-radius: 24px;
+    }
+    /* Pie de página */
+    .pie-pagina {
+        padding: 35px 20px 40px 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .titulo-grupo {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .tarjeta-integrante {
+        flex: calc(50% - 15px);
+        min-width: 110px;
+    }
+}
