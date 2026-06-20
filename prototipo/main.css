@@ -1,0 +1,15 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(253, 216, 39);
+}
+
+.imagen-prototipo {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Hace que se adapte milimétricamente al marco */
+    display: block;
+}
