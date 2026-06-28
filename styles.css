@@ -382,7 +382,7 @@ html {
 
 .seccion-prototipo,
 .seccion-descripcion,
-#contacto {
+#contacto, #caracteristicas {
     scroll-margin-top: 90px;
 }
 
