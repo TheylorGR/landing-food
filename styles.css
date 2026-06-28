@@ -303,6 +303,11 @@ html {
     transform: translateY(-5px) scale(1.1);
 }
 
+.lista-nav li a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 .seccion-prototipo, 
 .seccion-descripcion, 
 #contacto {
