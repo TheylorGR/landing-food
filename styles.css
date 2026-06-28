@@ -7,7 +7,6 @@
     box-sizing: border-box;
 }
 
-/* FIX 1: font-family en body en lugar de * */
 body {
     font-family: Arial, sans-serif;
     width: 100%;
@@ -64,7 +63,6 @@ html {
     display: inline-block;
 }
 
-/* Truco para ocultar hamburguesa en escritorio */
 .checkbox-menu {
     display: none;
 }
@@ -79,7 +77,7 @@ html {
     height: 35px;
 }
 
-/* Contenido hasta antes de pie de página */
+/* CONTENIDO PRINCIPAL */
 .contenido-principal {
     padding-top: 70px;
     width: 100%;
@@ -88,68 +86,86 @@ html {
     flex-direction: column;
 }
 
-/* Seccion inicio */
+/* SECCIÓN HERO */
 .seccion-hero {
     width: 100%;
     position: relative;
     overflow: hidden;
     font-size: 0;
-    background-color: rgb(242, 213, 74);
+    background-image: url('fotos/fondo crema.png'); 
 }
 
 .imagen-principal {
     width: 100%;
     height: auto;
     max-height: 75vh;
-    object-fit: fill;
+    object-fit: cover;
     display: block;
 }
 
-/* Cuadro para logo plomo y texto */
-.caja-flotante {
+/* LOGO GRIS - Ajustado dinámicamente */
+.logo-gris {
     position: absolute;
-    left: 5%;
-    bottom: 26%;
-    width: 38%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3vh;
+    left: 8%;
+    bottom: 35%;
+    width: 25vw;
+    max-width: 320px;
+    min-width: 160px;
+    height: auto;
+    display: block;
     z-index: 10;
 }
 
-.logo-gris {
-    width: 70%;
-    max-width: 380px;
-    min-width: 150px;
-    height: auto;
-    display: block;
-}
-
-.cuadro-texto {
+/* SECCIÓN DESCRIPCIÓN - CORREGIDA PARA MOSTRAR AMBOS BORDES (ARRIBA Y ABAJO) */
+.seccion-descripcion {
     width: 100%;
-    background-color: rgb(241, 189, 57);
-    padding: 18px 22px;
-    border-radius: 12px;
+    /* Relleno interno vertical amplio para que el texto respire dentro de las curvas */
+    padding: 140px 20px; 
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.cuadro-texto p {
-    font-size: 16px;
-    color: #111111;
-    line-height: 1.4;
     text-align: center;
-    font-weight: 500;
-    margin: 0;
+    position: relative;
+    
+    /* Imagen de tu fondo */
+    background-image: url('fotos/fondo crema.png'); 
+    
+    /* 100% 100% fuerza a la imagen a encajar de esquina a esquina mostrando el borde superior e inferior completo */
+    background-size: 100% 100%; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    /* Fondo transparente para que el flujo de las secciones adyacentes sea perfecto */
+    background-color: transparent; 
 }
 
-/* Prototipo */
+.contenedor-descripcion {
+    max-width: 850px;
+    width: 100%;
+    z-index: 5;
+}
+
+.titulo-descripcion {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.texto-descripcion {
+    font-size: 18px;
+    color: #222222;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* SECCIÓN PROTOTIPO */
 .seccion-prototipo {
     width: 100%;
     background-color: rgb(242, 213, 74);
-    padding: 60px 0 0 0;
+    padding: 80px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,7 +180,6 @@ html {
     text-align: center;
 }
 
-/* FIX 2: Contenedor solo centra — el estilo visual lo da .celular-mockup */
 .contenedor-prototipo {
     display: flex;
     justify-content: center;
@@ -174,20 +189,10 @@ html {
     height: 75vh;
     margin: 0 auto;
     background: transparent;
-    border-radius: 0;
     overflow: visible;
     padding: 0;
 }
 
-.contenedor-prototipo iframe,
-.contenedor-prototipo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: none;
-}
-
-/* Mockup de celular */
 .celular-mockup {
     width: 310px;
     height: 660px;
@@ -285,23 +290,28 @@ html {
     transform: scale(1.15);
 }
 
-/* FIX 3: Scroll offset — clase utilitaria reutilizable */
-.seccion {
+/* Transiciones e interacciones */
+.lista-nav li {
+    transition: transform 0.3s ease;
+}
+
+.lista-nav li:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.seccion-prototipo, 
+.seccion-descripcion, 
+#contacto {
     scroll-margin-top: 90px;
 }
 
 /* =============================================
-   RESPONSIVE — FIX 4: Ordenado de mayor a menor
+    RESPONSIVE
    ============================================= */
 
 @media (max-width: 1050px) and (min-width: 769px) {
-    .caja-flotante {
-        bottom: 5%;
-        gap: 1.5vh;
-    }
-
     .logo-gris {
-        max-width: 200px;
+        max-width: 220px;
     }
 }
 
@@ -317,8 +327,6 @@ html {
 }
 
 @media (max-width: 768px) {
-
-    /* Menú hamburguesa */
     .boton-menu {
         display: block;
         z-index: 1001;
@@ -350,7 +358,6 @@ html {
         display: block;
     }
 
-    /* Hamburguesa interacción */
     .checkbox-menu:checked ~ .lista-nav {
         display: flex;
     }
@@ -363,12 +370,10 @@ html {
         display: block;
     }
 
-    /* Contenido principal */
     .contenido-principal {
         padding-top: 60px;
     }
 
-    /* Sección hero */
     .seccion-hero {
         overflow: visible;
         display: flex;
@@ -382,43 +387,31 @@ html {
         width: 100%;
     }
 
-    .caja-flotante {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: rgb(242, 213, 74);
-        padding: 50px 20px 60px 20px;
-        gap: 25px;
-        align-items: center;
-    }
-
     .logo-gris {
         position: absolute;
-        top: -18vw;
-        left: 28%;
-        transform: translate(-50%, -50%);
-        width: 50%;
-        max-width: 195px;
-        min-width: 95px;
+        top: auto;
+        bottom: 12vw;
+        left: 25%;
+        transform: translateX(-50%);
+        width: 35%;
+        max-width: 180px;
+        min-width: 120px;
         z-index: 15;
     }
 
-    .cuadro-texto {
-        width: 92%;
-        max-width: 500px;
-        padding: 35px 28px;
-        border-radius: 18px;
+    .seccion-descripcion {
+        padding: 80px 20px;
+        background-size: 100% 100%;
     }
 
-    .cuadro-texto p {
-        font-size: 14.5px;
-        font-weight: bold;
-        font-style: italic;
-        line-height: 1.6;
+    .titulo-descripcion {
+        font-size: 28px;
     }
 
-    /* Sección prototipo */
+    .texto-descripcion {
+        font-size: 15px;
+    }
+
     .seccion-prototipo {
         padding: 40px 0 0 0;
     }
@@ -432,12 +425,8 @@ html {
         max-width: 85vw;
         width: 100%;
         height: 70vh;
-        background: transparent;
-        border-radius: 0;
-        padding: 0;
     }
 
-    /* Pie de página */
     .pie-pagina {
         padding: 35px 20px 40px 20px;
         border-top-left-radius: 20px;
@@ -452,5 +441,12 @@ html {
     .tarjeta-integrante {
         flex: calc(50% - 15px);
         min-width: 110px;
+    }
+}
+
+@media (min-width: 1450px) {
+    .imagen-principal {
+        max-height: 700px;
+        object-position: center bottom;
     }
 }
