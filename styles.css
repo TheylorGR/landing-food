@@ -10,7 +10,7 @@
 body {
     font-family: Arial, sans-serif;
     width: 100%;
-    background-color: rgb(242, 213, 74);
+    background-color: #ffffff;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -256,6 +256,10 @@ html {
 }
 
 /* PIE DE PÁGINA */
+
+.contenedor-footer {
+    background-color: rgb(242, 213, 74);
+}
 .pie-pagina {
     width: 100%;
     background-color: #1a1a1a;
@@ -265,7 +269,6 @@ html {
     align-items: center;
     border-top-left-radius: 28px;
     border-top-right-radius: 28px;
-    margin-top: 60px;
     box-sizing: border-box;
 }
 
