@@ -92,7 +92,7 @@ html {
     position: relative;
     overflow: hidden;
     font-size: 0;
-    background-image: url('fotos/fondo crema.png'); 
+    background-image: url('fotos/fondo crema.png');
 }
 
 .imagen-principal {
@@ -103,7 +103,7 @@ html {
     display: block;
 }
 
-/* LOGO GRIS - Ajustado dinámicamente */
+/* LOGO GRIS */
 .logo-gris {
     position: absolute;
     left: 15%;
@@ -116,27 +116,20 @@ html {
     z-index: 10;
 }
 
-/* SECCIÓN DESCRIPCIÓN - CORREGIDA PARA MOSTRAR AMBOS BORDES (ARRIBA Y ABAJO) */
+/* SECCIÓN DESCRIPCIÓN */
 .seccion-descripcion {
     width: 100%;
-    /* Relleno interno vertical amplio para que el texto respire dentro de las curvas */
-    padding: 140px 20px; 
+    padding: 140px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
-    
-    /* Imagen de tu fondo */
-    background-image: url('fotos/fondo crema.png'); 
-    
-    /* 100% 100% fuerza a la imagen a encajar de esquina a esquina mostrando el borde superior e inferior completo */
-    background-size: 100% 100%; 
+    background-image: url('fotos/fondo crema.png');
+    background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    
-    /* Fondo transparente para que el flujo de las secciones adyacentes sea perfecto */
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .contenedor-descripcion {
@@ -191,14 +184,47 @@ html {
 
 .tarjeta-funcion {
     border-radius: 20px;
-    overflow: hidden;
+    position: relative;
+    aspect-ratio: 3 / 4;
 }
 
 .tarjeta-funcion img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.texto-funcion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 60px 100px 15px;
+}
+
+.titulo-tarjeta-funcion {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: clamp(13px, 1.4vw, 20px);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.descripcion-tarjeta-funcion {
+    font-size: clamp(10px, 1vw, 14px);
+    color: #ffffff;
+    line-height: 1.5;
+    display: -webkit-box;
 }
 
 /* SECCIÓN PROTOTIPO */
@@ -256,10 +282,10 @@ html {
 }
 
 /* PIE DE PÁGINA */
-
 .contenedor-footer {
     background-color: rgb(242, 213, 74);
 }
+
 .pie-pagina {
     width: 100%;
     background-color: #1a1a1a;
@@ -347,18 +373,18 @@ html {
 }
 
 .lista-nav li a:hover {
-    background-color: rgb(242, 213, 74);;
+    background-color: rgb(242, 213, 74);
     color: #000000;
 }
 
-.seccion-prototipo, 
-.seccion-descripcion, 
+.seccion-prototipo,
+.seccion-descripcion,
 #contacto {
     scroll-margin-top: 90px;
 }
 
 /* =============================================
-    RESPONSIVE
+   RESPONSIVE
    ============================================= */
 
 @media (max-width: 1050px) and (min-width: 769px) {
@@ -466,12 +492,28 @@ html {
 
     .grilla-funciones {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 700px;
     }
 
     .tarjeta-funcion:last-child {
-        grid-column: 1 / -1;
-        max-width: 50%;
+        grid-column: 1 / 3;
+        width: 50%;
         margin: 0 auto;
+    }
+
+    .texto-funcion {
+        padding: 0 45px 115px 15px;
+        height: 58%;
+    }
+
+    .titulo-tarjeta-funcion {
+        font-size: clamp(12px, 2.2vw, 18px);
+        margin-bottom: 6px;
+    }
+
+    .descripcion-tarjeta-funcion {
+        font-size: clamp(9px, 1.5vw, 13px);
     }
 
     .seccion-prototipo {
@@ -505,7 +547,8 @@ html {
         min-width: 110px;
     }
 }
-/*pantallas grandes, hace funcionar las hondas de descripción*/
+
+/* pantallas grandes */
 @media (min-width: 1450px) {
     .imagen-principal {
         max-height: 700px;
@@ -513,13 +556,39 @@ html {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 625px) {
+    .seccion-funciones {
+        padding: 60px 20px;
+    }
+
     .grilla-funciones {
         grid-template-columns: 1fr;
+        max-width: 85vw;
+        gap: 20px;
     }
 
     .tarjeta-funcion:last-child {
         grid-column: auto;
-        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .texto-funcion {
+        padding: 0 15vw 10vw 6vw;
+        height: 60%;
+        justify-content: flex-start;
+        padding-top: 3vw;
+    }
+
+    .titulo-tarjeta-funcion {
+        font-size: 4.5vw;
+        margin-bottom: 1.5vw;
+    }
+
+    .descripcion-tarjeta-funcion {
+        font-size: 3vw;
+        line-height: 1.5;
+        display: block;
+        overflow: visible;
     }
 }
